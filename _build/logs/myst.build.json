@@ -1,0 +1,43 @@
+{
+  "input": {
+    "files": [
+      "modeling.ipynb"
+    ],
+    "opts": {
+      "execute": false,
+      "pdf": true,
+      "tex": false,
+      "typst": false,
+      "docx": false,
+      "md": false,
+      "xml": false,
+      "meca": false,
+      "cff": false,
+      "site": false,
+      "html": false,
+      "all": false,
+      "doiBib": false,
+      "watch": false,
+      "force": false,
+      "checkLinks": false,
+      "strict": false,
+      "ci": false,
+      "maxSizeWebp": 1572864,
+      "keepHost": false,
+      "output": "pdf_builds/"
+    }
+  },
+  "exports": [
+    {
+      "format": "pdf",
+      "output": "/home/jovyan/final-group18/pdf_builds/modeling.pdf",
+      "articles": [
+        {
+          "file": "/home/jovyan/final-group18/modeling.ipynb",
+          "level": 0
+        }
+      ],
+      "$file": "/home/jovyan/final-group18/modeling.ipynb"
+    }
+  ]
+}
