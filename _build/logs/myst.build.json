@@ -1,9 +1,11 @@
 {
   "input": {
-    "files": [],
+    "files": [
+      "model_rq4.ipynb"
+    ],
     "opts": {
       "execute": false,
-      "pdf": false,
+      "pdf": true,
       "tex": false,
       "typst": false,
       "docx": false,
@@ -21,10 +23,22 @@
       "strict": false,
       "ci": false,
       "maxSizeWebp": 1572864,
-      "keepHost": false
-    },
-    "performSiteBuild": true
+      "keepHost": false,
+      "output": "pdf_builds/"
+    }
   },
-  "exports": [],
-  "buildSite": true
+  "exports": [
+    {
+      "format": "pdf",
+      "output": "/home/jovyan/final-group18/pdf_builds/model-rq4.pdf",
+      "articles": [
+        {
+          "file": "/home/jovyan/final-group18/model_rq4.ipynb",
+          "level": 0
+        }
+      ],
+      "$file": "/home/jovyan/final-group18/model_rq4.ipynb",
+      "$project": "/home/jovyan/final-group18"
+    }
+  ]
 }
