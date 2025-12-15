@@ -1,0 +1,21 @@
+# See docs at: https://mystmd.org/guide/frontmatter
+version: 1
+project:
+  id: 3575e182-6c2e-4f5a-9c5c-37cc041ef562
+  title: "Final Project: Food Affordability in California"
+  description: MYST - Project 2
+  # keywords: []
+  authors:
+    - name: "Seungwon (Sydney) Lee"
+    - name: "Demi Leng"
+    - name: "Darlane Zhang"
+    - name: "Hannah Chung"
+  github: https://github.com/UCB-stat-159-f25/final-group18
+  # To autogenerate a Table of Contents, run "myst init --write-toc"
+
+    
+site:
+  template: book-theme
+  # options:
+  #   favicon: favicon.ico
+  #   logo: site_logo.png
