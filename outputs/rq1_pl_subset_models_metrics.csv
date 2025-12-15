@@ -1,0 +1,9 @@
+model,features,RMSE,MAE,R2
+"Ridge(log1p y) | region_name, median_income","region_name, median_income",0.3266858201932668,0.144770160740722,0.27054519228855356
+Ridge(log1p y) | median_income,median_income,0.3276026924225782,0.14980939093708273,0.2664448894242728
+"Ridge(log1p y) | region_name, race_eth_name, median_income","region_name, race_eth_name, median_income",0.3285245611693352,0.14599404010595815,0.2623106560216618
+"Ridge(log1p y) | race_eth_name, median_income","race_eth_name, median_income",0.32976063541575684,0.15095802062312866,0.25674909804101065
+Ridge(log1p y) | region_name,region_name,0.37581159628329497,0.1844126861042879,0.03466472569064516
+"Ridge(log1p y) | region_name, race_eth_name","region_name, race_eth_name",0.37993125735555383,0.18315850368147657,0.013384640646193269
+Dummy(mean),,0.38390430947338766,0.21942432424844244,-0.007357900545479579
+Ridge(log1p y) | race_eth_name,race_eth_name,0.38815300404839076,0.19731151826433152,-0.02977827572920777
