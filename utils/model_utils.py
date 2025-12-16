@@ -6,6 +6,8 @@ from sklearn.linear_model import RidgeCV
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import OneHotEncoder, StandardScaler
+from scipy.stats import f_oneway
+from statsmodels.stats.multicomp import pairwise_tukeyhsd
 
 def rmse(y_true, y_pred):
     """
@@ -94,6 +96,59 @@ def eval_model_rq1(name, model, X_train, X_test, y_train, y_test):
         "MAE": mean_absolute_error(y_test, pred),
         "R2": r2_score(y_test, pred),
     }
+
+def one_way_anova(df, target, group, min_group_size=5):
+    """
+    Run a one-way ANOVA of `target` across levels of `group`.
+
+    Parameters
+    ----------
+    df : pandas.DataFrame
+        Input data.
+    target : str
+        Numeric outcome column name.
+    group : str
+        Categorical grouping column name.
+    min_group_size : int, default=5
+        Minimum observations required per group to be included.
+
+    Returns
+    -------
+    dict
+        {"F": float, "p_value": float, "n_groups": int, "n_total": int}
+    """
+    grouped = df[[target, group]].dropna().groupby(group)
+    samples = [g[target].values for _, g in grouped if len(g) >= min_group_size]
+    if len(samples) < 2:
+        raise ValueError(f"Need at least 2 groups with >= {min_group_size} samples for ANOVA.")
+    F, p = f_oneway(*samples)
+    n_groups = len(samples)
+    n_total = sum(len(s) for s in samples)
+    return {"F": float(F), "p_value": float(p), "n_groups": n_groups, "n_total": n_total}
+
+def tukey_hsd(df, target, group, alpha=0.05):
+    """
+    Run Tukey HSD post-hoc comparisons for `target` across levels of `group`.
+
+    Parameters
+    ----------
+    df : pandas.DataFrame
+        Input data.
+    target : str
+        Numeric outcome column name.
+    group : str
+        Categorical grouping column name.
+    alpha : float, default=0.05
+        Family-wise significance level.
+
+    Returns
+    -------
+    pandas.DataFrame
+        Tukey HSD summary table (pairwise group comparisons).
+    """
+    sub = df[[target, group]].dropna()
+    tukey = pairwise_tukeyhsd(endog=sub[target], groups=sub[group], alpha=alpha)
+    return pd.DataFrame(tukey.summary().data[1:], columns=tukey.summary().data[0])
 
 def make_ohe(dense: bool):
     """
