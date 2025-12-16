@@ -5,7 +5,7 @@ import pytest
 from sklearn.linear_model import LinearRegression
 from sklearn.pipeline import Pipeline
 
-from utils.model_utils import rmse, make_ridge_model, eval_model_rq1, make_ohe, split_cols, make_preprocessor, wrap_log1p, eval_model_rq4
+from utils.model_utils import rmse, make_ridge_model, eval_model_rq1, one_way_anova, tukey_hsd, make_ohe, split_cols, make_preprocessor, wrap_log1p, eval_model_rq4
 
 def test_rmse_known_value():
     """rmse should match the direct definition."""
@@ -124,3 +124,47 @@ def test_eval_model_rq4_returns_metrics_and_pred():
         assert k in metrics
     assert pred.shape == (2,)
     assert np.isfinite(pred).all()
+
+def _toy_df():
+    # Clear separation: B >> A,C so ANOVA + Tukey should flag B comparisons.
+    return pd.DataFrame(
+        {
+            "affordability_ratio": [
+                0, 1, 0, 1, 0,      # A
+                10, 11, 10, 11, 10,  # B
+                0, 0, 1, 0, 1,       # C
+                None,                # NA row (should be dropped)
+            ],
+            "region_name": (
+                ["A"] * 5
+                + ["B"] * 5
+                + ["C"] * 5
+                + ["A"]
+            ),
+        }
+    )
+
+def test_one_way_anova_basic_outputs_and_significance():
+    df = _toy_df()
+    out = one_way_anova(df, target="affordability_ratio", group="region_name", min_group_size=5)
+
+    assert set(out.keys()) == {"F", "p_value", "n_groups", "n_total"}
+    assert out["n_groups"] == 3
+    assert out["n_total"] == 15  # NA row dropped
+    assert out["F"] > 0
+    assert out["p_value"] < 1e-6
+
+def test_tukey_hsd_returns_expected_table_and_rejects_big_differences():
+    df = _toy_df()
+    res = tukey_hsd(df, target="affordability_ratio", group="region_name", alpha=0.05)
+
+    expected_cols = {"group1", "group2", "meandiff", "p-adj", "lower", "upper", "reject"}
+    assert expected_cols.issubset(res.columns)
+    assert res.shape[0] == 3  # 3 groups -> 3 pairwise comparisons
+
+    # Ensure B differs from A and C
+    ab = res[((res["group1"] == "A") & (res["group2"] == "B")) | ((res["group1"] == "B") & (res["group2"] == "A"))]
+    cb = res[((res["group1"] == "C") & (res["group2"] == "B")) | ((res["group1"] == "B") & (res["group2"] == "C"))]
+
+    assert len(ab) == 1 and bool(ab.iloc[0]["reject"]) is True
+    assert len(cb) == 1 and bool(cb.iloc[0]["reject"]) is True
