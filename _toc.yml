@@ -3,4 +3,6 @@ root: README.md
 chapters:
   - file: EDA.ipynb
   - file: model_rq1.ipynb
+  - file: model_rq2.ipynb
+  - file: model_rq3.ipynb
   - file: model_rq4.ipynb
