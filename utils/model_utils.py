@@ -23,8 +23,7 @@ def rmse(y_true, y_pred):
     float
         Root mean squared error.
     """
-	return np.sqrt(mean_squared_error(y_true, y_pred))
-
+    return np.sqrt(mean_squared_error(y_true, y_pred))
 
 def make_ridge_model(feature_list, X_ref: pd.DataFrame):
     """
@@ -68,7 +67,7 @@ def make_ridge_model(feature_list, X_ref: pd.DataFrame):
     return model
 
 def eval_model_rq1(name, model, X_train, X_test, y_train, y_test):
-	"""
+    """
     Fit a model and return test metrics (RQ1 format).
 
     Parameters
@@ -159,7 +158,7 @@ def make_preprocessor(feature_list, X_ref, dense=False, scale_num_for_linear=Tru
     sklearn.compose.ColumnTransformer
         Preprocessing transformer.
     """
-	cat_cols, num_cols = split_cols(X_ref, feature_list)
+    cat_cols, num_cols = split_cols(X_ref, feature_list)
     ohe = make_ohe(dense=dense)
 
     if scale_num_for_linear:
@@ -190,12 +189,12 @@ def wrap_log1p(model_pipeline):
     sklearn.compose.TransformedTargetRegressor
         Wrapped estimator operating on log1p(y).
     """
-	return TransformedTargetRegressor(
+    return TransformedTargetRegressor(
         regressor=model_pipeline,
         func=np.log1p,
         inverse_func=np.expm1
     )
-	
+    
 def eval_model_rq4(model, Xtr, Xte, ytr, yte):
     """
     Fit a model and return metrics + predictions (RQ4 format).
@@ -214,7 +213,7 @@ def eval_model_rq4(model, Xtr, Xte, ytr, yte):
     (dict, numpy.ndarray)
         (metrics, y_pred) where metrics has RMSE, MAE, R2.
     """
-	model.fit(Xtr, ytr)
+    model.fit(Xtr, ytr)
     pred = model.predict(Xte)
     metrics = {
         "RMSE": rmse(yte, pred),
