@@ -19,3 +19,17 @@ Outputs from the AI
 - Guidance on best practices for handling MyST build outputs in version control
 - Step-by-step instructions to properly conclude a Git merge after resolving conflicts
 - Recommendations for maintaining a clean and reproducible documentation workflo
+
+Demi - ChatGPT 5.2: 
+
+I used ChatGPT 5.2 Thinking mode to help generate doc strings for the functions, as well as providing an standardized format of naming outputs and figures. I also used it to resolve the ERROR occur when running pytest -q.
+
+Inputs to the AI
+
+1. Functions in model_utils.py. Prompt: Help me write the doc string for these functions,  describing the purpose of the function, their inputs and types, and their outputs. Write cleanly with minimal wording.
+2. Screen shot of terminal 1, showing "ERROR collecting utils/tests/test_utils.py".
+
+Outpus from the AI
+
+1. Doc strings embedded in the functions, current version shown in model_utils.py
+2. Suggestion of adding conftest.py, with code provided
