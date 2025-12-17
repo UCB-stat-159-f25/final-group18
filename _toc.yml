@@ -1,6 +1,7 @@
 format: jb-book
 root: README.md
 chapters:
+  - file: main.ipynb
   - file: EDA.ipynb
   - file: model_rq1.ipynb
   - file: model_rq2.ipynb
