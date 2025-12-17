@@ -3,6 +3,8 @@
 # California Food Affordability Analysis
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/UCB-stat-159-f25/final-group18/main)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17970030.svg)](https://doi.org/10.5281/zenodo.17970030)
+
 
 ## Overview
 This project analyzes **food affordability across places in California** and investigates how affordability varies with **socioeconomic**, **geographic**, and **demographic** context. The motivation is to understand where affordability burdens are highest and which contextual predictors are most informative, using interpretable statistical tests and simple regression models.
