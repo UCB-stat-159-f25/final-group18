@@ -19,7 +19,7 @@ We use the **Food Affordability** indicator published by the **California Depart
 **Publisher:** California Department of Public Health
 
 ## Project Website
-The project's JupyterBook website can be accessed [here](https://ucb-stat-159-f25.github.io/project-Group18/main.html)
+The project's JupyterBook website can be accessed [here](https://ucb-stat-159-f25.github.io/final-group18/)
 
 ## Repository Structure
 
