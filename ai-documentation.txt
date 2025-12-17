@@ -1,0 +1,21 @@
+Sydney(Seungwon) - ChatGPT 5.2: 
+
+I used an AI assistant to understand the MyST build workflow and resolve Git merge issues related to generated build files. The AI provided guidance on which files are auto-generated, how to properly complete an unfinished merge, and how to maintain a clean repository structure, which helped us finalize the documentation build successfully.
+
+Inputs to the AI
+
+- The inputs provided to the AI assistant included:
+- Error messages and terminal outputs related to myst build
+- Repository structure (e.g., presence of _build/, pdf_builds/, and source notebooks)
+- Git status outputs indicating an unfinished merge state
+- Questions about whether MyST-generated files should be committed
+- Screenshots or logs showing merge conflicts involving build artifacts
+
+Outputs from the AI
+
+- The AI assistant provided:
+- Conceptual explanations of the MyST build process and its generated artifacts
+- Clarification on which directories are auto-generated and should not be manually edited
+- Guidance on best practices for handling MyST build outputs in version control
+- Step-by-step instructions to properly conclude a Git merge after resolving conflicts
+- Recommendations for maintaining a clean and reproducible documentation workflo
