@@ -33,3 +33,31 @@ Outpus from the AI
 
 1. Doc strings embedded in the functions, current version shown in model_utils.py
 2. Suggestion of adding conftest.py, with code provided
+
+
+Hannah – ChatGPT 5.2:
+
+I used an AI assistant to help diagnose errors encountered when running make all. The AI provided guidance on interpreting build errors and environment-related issues. It also suggested creating and working on a separate Git branch to isolate fixes. This helped resolve execution issues without affecting the main branch. The AI support streamlined the debugging process.
+
+Inputs to the AI
+
+- Terminal error messages and logs produced when running make all
+- Questions about debugging build failures and branching strategies
+
+Outputs from the AI
+
+- Explanations of likely causes of build errors
+- Recommendations for using a separate Git branch to safely apply fixes
+
+
+Darlene – ChatGPT 5.2:
+
+I used an AI assistant to help resolve Git merge conflicts that occurred during development. The AI explained how to identify merge conflict markers in conflicted files. It provided guidance on safely removing conflicts and completing the merge. This helped restore a clean and consistent repository state. The AI support reduced time spent on manual conflict resolution.
+
+Inputs to the AI
+- Git error messages and files containing merge conflict markers
+- Questions about how to safely resolve merge conflicts
+
+Outputs from the AI
+- Guidance on identifying and removing merge conflict markers
+- Step-by-step instructions for completing the merge successfully
