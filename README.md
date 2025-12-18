@@ -2,7 +2,7 @@
 ## California Food Affordability Analysis
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/UCB-stat-159-f25/final-group18/main)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17970030.svg)](https://doi.org/10.5281/zenodo.17970030)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17970438.svg)](https://doi.org/10.5281/zenodo.17970438)
 
 
 ## Overview
