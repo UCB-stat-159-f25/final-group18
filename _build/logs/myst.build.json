@@ -1,7 +1,7 @@
 {
   "input": {
     "files": [
-      "model_rq1.ipynb"
+      "main.ipynb"
     ],
     "opts": {
       "execute": false,
@@ -29,14 +29,14 @@
   "exports": [
     {
       "format": "pdf",
-      "output": "/home/jovyan/final-group18/_build/exports/model-rq1.pdf",
+      "output": "/home/jovyan/final-group18/_build/exports/main.pdf",
       "articles": [
         {
-          "file": "/home/jovyan/final-group18/model_rq1.ipynb",
+          "file": "/home/jovyan/final-group18/main.ipynb",
           "level": 0
         }
       ],
-      "$file": "/home/jovyan/final-group18/model_rq1.ipynb",
+      "$file": "/home/jovyan/final-group18/main.ipynb",
       "$project": "/home/jovyan/final-group18"
     }
   ]
