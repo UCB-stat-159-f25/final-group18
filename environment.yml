@@ -1,28 +1,58 @@
+# name: stat159-env
+# channels:
+#   - conda-forge
+# dependencies:
+#   - python=3.10
+#   - pip
+
+#   # Jupyter / Binder
+#   - jupyterlab
+#   - ipython
+
+#   # Core data libraries
+#   - numpy
+#   - pandas
+#   - scipy
+
+#   # Visualization
+#   - matplotlib
+#   - seaborn
+
+#   # Statistics
+#   - statsmodels
+
+#   # Machine learning
+#   - scikit-learn
+
+#   # Utilities
+#   - make
+
+
 name: stat159-env
 channels:
   - conda-forge
 dependencies:
   - python=3.10
-  - pip
 
-  # Jupyter / Binder
+  # Execution
   - jupyterlab
   - ipython
+  - nbconvert
 
-  # Core data libraries
-  - numpy
-  - pandas
-  - scipy
+  # Core data
+  - numpy>=1.23,<2.0
+  - pandas>=1.5,<2.0
+  - scipy>=1.9,<2.0
 
   # Visualization
-  - matplotlib
-  - seaborn
+  - matplotlib>=3.6,<4.0
+  - seaborn>=0.12,<0.14
 
-  # Statistics
-  - statsmodels
+  # Statistics / ML
+  - statsmodels>=0.13,<0.15
+  - scikit-learn>=1.2,<1.5
 
-  # Machine learning
-  - scikit-learn
-
-  # Utilities
+  # Documentation / build
+  - mystmd
   - make
+
