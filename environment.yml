@@ -5,24 +5,14 @@ dependencies:
   - python=3.10
   - pip
 
-  # Jupyter / Binder
+
   - jupyterlab
   - ipython
-
-  # Core data libraries
   - numpy
   - pandas
   - scipy
-
-  # Visualization
   - matplotlib
   - seaborn
-
-  # Statistics
   - statsmodels
-
-  # Machine learning
   - scikit-learn
-
-  # Utilities
   - make
