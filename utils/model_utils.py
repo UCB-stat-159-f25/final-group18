@@ -276,3 +276,23 @@ def eval_model_rq4(model, Xtr, Xte, ytr, yte):
         "R2":  float(r2_score(yte, pred))
     }
     return metrics, pred
+
+def pick_best(df_metrics, fs_name):
+    """
+    Pick the best-performing model (lowest RMSE) within a feature set.
+
+    Parameters
+    ----------
+    df_metrics : pandas.DataFrame
+        Metrics table that includes at least columns: "feature_set", "RMSE", "model".
+    fs_name : str
+        Feature set name to filter on.
+
+    Returns
+    -------
+    str
+        The model name with the smallest RMSE for the given feature set.
+    """
+    sub = df_metrics[df_metrics["feature_set"] == fs_name].copy()
+    sub = sub.sort_values("RMSE")
+    return sub.iloc[0]["model"]

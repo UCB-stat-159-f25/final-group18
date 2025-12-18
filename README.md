@@ -1,6 +1,5 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/sSkqmNLf)
-
-# California Food Affordability Analysis
+# Stat 159 Group 18 Final Project
+## California Food Affordability Analysis
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/UCB-stat-159-f25/final-group18/main)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17970030.svg)](https://doi.org/10.5281/zenodo.17970030)
@@ -15,7 +14,9 @@ The analysis is organized into four research questions (RQs), implemented as not
 We use the **Food Affordability** indicator published by the **California Department of Public Health** on the State of California Open Data portal. The dataset describes the average cost of a nutritious market basket relative to income for **female-headed households with children**, reported for California and multiple geographic levels (regions/counties/places).
 
 **Source:** https://data.ca.gov/dataset/food-affordability
+
 **Temporal coverage:** 2006–2010
+
 **Publisher:** California Department of Public Health
 
 ## Project Website
@@ -54,6 +55,20 @@ The project's JupyterBook website can be accessed [here](https://ucb-stat-159-f2
 
 * `conftest.py`: Pytest configuration for imports
 
+* `Makefile`: Common automation commands
+
+* `myst.yml`: MyST configuration
+
+* `_toc.yml`: JupyterBook table of contents
+
+* `references.bib`: Bibliography file for citations
+
+* `project-description.md`: Short project description / write-up used for the site
+
+* `ai-documentation.txt`: AI usage documentation (prompts/tools used, per course policy)
+
+* `LICENSE`: Repository license terms
+
 ## Setup and Installation
 
 1. Clone this repository:
@@ -66,12 +81,12 @@ cd final-group18
 2. Create and activate the environment:
 
 ```python
-mamba env create -f environment.yml --name stat159final
-conda activate stat159final
+mamba env create -f environment.yml --name stat159-env
+conda activate stat159-env
 ```
 
 ```python
-python -m ipykernel install --user --name stat159final --display-name "IPython - stat159final"
+python -m ipykernel install --user --name stat159-env --display-name "IPython - stat159-env"
 ```
 
 ## Usage
